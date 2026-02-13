@@ -1,0 +1,32 @@
+# To create the script i used nano
+
+DESKTOP-KL7IR2A% nano hello.sh
+
+#!/bin/bash\necho
+
+echo "Hello Devops"
+
+# Used ls-l to check the permissions for the files
+
+DESKTOP-KL7IR2A% ls -l
+total 4
+-rw-r--r-- 1 hassa hassa 41 Feb 13 14:20 hello.sh
+
+owner,group,others, user:group date last modified filename
+
+# I made the file executable:
+
+DESKTOP-KL7IR2A% chmod 744 hello.sh
+DESKTOP-KL7IR2A% ls -l
+total 4
+-rwxr--r-- 1 hassa hassa 41 Feb 13 14:20 hello.sh
+
+# Then ran it:
+DESKTOP-KL7IR2A% bash hello.sh
+Hello Devops
+
+# Finally, i changed the ownership 
+DESKTOP-KL7IR2A% sudo chown root:root hello.sh
+[sudo] password for hassa:
+DESKTOP-KL7IR2A% ls -l hello.sh
+-rwxr--r-- 1 root root 41 Feb 13 14:20 hello.shh

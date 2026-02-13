@@ -1,0 +1,43 @@
+2025-01-01 09:00:01 INFO  Server started
+2025-01-01 09:01:15 INFO  User login: alice
+2025-01-01 09:02:44 WARN  Disk usage at 70%
+2025-01-01 09:03:10 ERROR Failed to open config file
+2025-01-01 09:04:22 INFO  Retrying connection
+2025-01-01 09:05:33 INFO  Connection established
+2025-01-01 09:06:45 INFO  User login: bob
+2025-01-01 09:07:02 WARN  High memory usage
+2025-01-01 09:08:19 INFO  Scheduled job started
+2025-01-01 09:09:55 INFO  Scheduled job finished
+2025-01-01 09:10:11 ERROR Timeout while contacting API
+2025-01-01 09:11:27 INFO  Retrying API request
+2025-01-01 09:12:48 INFO  API request successful
+2025-01-01 09:13:59 INFO  User logout: alice
+2025-01-01 09:14:33 WARN  CPU temperature high
+2025-01-01 09:15:44 INFO  Cooling system adjusted
+2025-01-01 09:16:50 INFO  User login: charlie
+2025-01-01 09:17:21 ERROR Database connection lost
+2025-01-01 09:18:09 INFO  Attempting reconnect
+2025-01-01 09:19:40 INFO  Database reconnected
+2025-01-01 09:20:12 INFO  Backup process started
+2025-01-01 09:21:55 INFO  Backup process completed
+2025-01-01 09:22:30 WARN  Low disk space on /dev/sda1
+2025-01-01 09:23:41 INFO  Cleaning temporary files
+2025-01-01 09:24:52 INFO  Disk space recovered
+2025-01-01 09:25:13 ERROR Permission denied accessing /secure
+2025-01-01 09:26:37 INFO  Security alert logged
+2025-01-01 09:27:48 INFO  User logout: bob
+2025-01-01 09:28:59 INFO  User login: dana
+2025-01-01 09:29:14 WARN  Unusual network activity detected
+2025-01-01 09:30:26 INFO  Network scan initiated
+2025-01-01 09:31:39 INFO  Network scan completed
+2025-01-01 09:32:47 INFO  User logout: charlie
+2025-01-01 09:33:58 INFO  System idle
+2025-01-01 09:34:10 INFO  Scheduled maintenance starting
+2025-01-01 09:35:22 INFO  Maintenance step 1 complete
+2025-01-01 09:36:33 INFO  Maintenance step 2 complete
+2025-01-01 09:37:44 INFO  Maintenance finished
+2025-01-01 09:38:55 INFO  Server running normally
+2025-01-01 09:39:59 INFO  Health check passed
+2025-01-01 09:40:12 ERROR Unexpected shutdown signal
+2025-01-01 09:41:20 INFO  Shutdown aborted
+2025-01-01 09:42:31 INFO  Servic

@@ -1,0 +1,88 @@
+#All enteries have been suffixed with the cmd line | head -n __ >> Task5Tp.txt
+
+# Searching with grep
+
+
+> grep "error" /var/log/syslog
+
+2026-02-08T11:21:25.233869+00:00 DESKTOP-KL7IR2A systemd[1]: apport-autoreport.path - Process error reports when automatic reporting is enabled (file watch) was skipped because of an unmet condition check (ConditionPathExists=/var/lib/apport/autoreport).
+2026-02-08T11:21:25.233873+00:00 DESKTOP-KL7IR2A systemd[1]: apport-autoreport.timer - Process error reports when automatic reporting is enabled (timer based) was skipped because of an unmet condition check (ConditionPathExists=/var/lib/apport/autoreport).
+2026-02-09T19:02:56.434745+00:00 DESKTOP-KL7IR2A systemd[1]: apport-autoreport.path - Process error reports when automatic reporting is enabled (file watch) was skipped because of an unmet condition check (ConditionPathExists=/var/lib/apport/autoreport).
+2026-02-09T19:02:56.434748+00:00 DESKTOP-KL7IR2A systemd[1]: apport-autoreport.timer - Process error reports when automatic reporting is enabled (timer based) was skipped because of an unmet condition check (ConditionPathExists=/var/lib/apport/autoreport).
+2026-02-10T19:41:22.819065+00:00 DESKTOP-KL7IR2A systemd[1]: apport-autoreport.path - Process error reports when automatic reporting is enabled (file watch) was skipped because of an unmet condition check (ConditionPathExists=/var/lib/apport/autoreport).
+2026-02-10T19:41:22.819068+00:00 DESKTOP-KL7IR2A systemd[1]: apport-autoreport.timer - Process error reports when automatic reporting is enabled (timer based) was skipped because of an unmet condition check (ConditionPathExists=/var/lib/apport/autoreport).
+2026-02-10T22:07:51.609991+00:00 DESKTOP-KL7IR2A ntpd[3688]: statistics directory /var/log/ntpsec/ does not exist or is unwriteable, error No such file or directory
+2026-02-10T22:07:59.360665+00:00 DESKTOP-KL7IR2A wsl-pro-service[4326]: #033[33mWARNING#033[0m Could not ensure valid Landscape configuration: could not ensure valid Landscape configuration: could not register distro to Landscape: could not enable Landscape: /usr/bin/landscape-config: error: exit status 1.
+2026-02-10T22:13:02.304449+00:00 DESKTOP-KL7IR2A ntpd[3688]: CLOCK: frequency error -1098 PPM exceeds tolerance 500 PPM
+2026-02-10T22:19:02.550717+00:00 DESKTOP-KL7IR2A wsl-pro-service[4326]: #033[33mWARNING#033[0m Exiting after could not ensure valid Landscape configuration: could not register distro to Landscape: could not enable Landscape: /usr/bin/landscape-config: error: exit status 1.
+
+
+> grep -r "TODO" ~/projects/ :
+
+grep: /home/hassa/projects/: No such file or directory
+
+# awk examples
+
+> ps aux | awk '{print $1, $11}' >> Task5Tp.txt
+
+USER COMMAND
+root /sbin/init
+root /init
+root plan9
+root /usr/lib/systemd/systemd-journald
+
+
+> cat /etc/passwd | awk -F: '{print $1, $6}'
+
+root /root
+daemon /usr/sbin
+bin /bin
+sys /dev
+
+# sed examples
+
+> sed 's/INFO/DEBUG/g' file.txt
+
+2025-01-01 09:00:01 DEBUG  Server started
+2025-01-01 09:01:15 DEBUG  User login: alice
+2025-01-01 09:02:44 WARN  Disk usage at 70%
+2025-01-01 09:03:10 ERROR Failed to open config file
+
+> sed -n '/ERROR/p' file.txt
+
+2025-01-01 09:03:10 ERROR Failed to open config file
+2025-01-01 09:10:11 ERROR Timeout while contacting API
+2025-01-01 09:17:21 ERROR Database connection lost
+2025-01-01 09:25:13 ERROR Permission denied accessing /secure
+
+> sed -n '10,20p' file.txt
+2025-01-01 09:09:55 INFO  Scheduled job finished
+2025-01-01 09:10:11 ERROR Timeout while contacting API
+2025-01-01 09:11:27 INFO  Retrying API request
+2025-01-01 09:12:48 INFO  API request successful
+
+
+#Piping chains
+
+> cat /var/log/syslog | grep "error" | awk '{print $1, $2, $3}' | sort | uniq
+
+2026-02-08T11:21:25.233869+00:00 DESKTOP-KL7IR2A systemd[1]:
+2026-02-08T11:21:25.233873+00:00 DESKTOP-KL7IR2A systemd[1]:
+2026-02-09T19:02:56.434745+00:00 DESKTOP-KL7IR2A systemd[1]:
+2026-02-09T19:02:56.434748+00:00 DESKTOP-KL7IR2A systemd[1]:
+2026-02-10T19:41:22.819065+00:00 DESKTOP-KL7IR2A systemd[1]:
+2026-02-10T19:41:22.819068+00:00 DESKTOP-KL7IR2A systemd[1]:
+2026-02-10T22:07:51.609991+00:00 DESKTOP-KL7IR2A ntpd[3688]:
+2026-02-10T22:07:59.360665+00:00 DESKTOP-KL7IR2A wsl-pro-service[4326]:
+2026-02-10T22:13:02.304449+00:00 DESKTOP-KL7IR2A ntpd[3688]:
+2026-02-10T22:19:02.550717+00:00 DESKTOP-KL7IR2A wsl-pro-service[4326]:
+2026-02-11T20:50:19.476278+00:00 DESKTOP-KL7IR2A systemd[1]:
+2026-02-11T20:50:19.476280+00:00 DESKTOP-KL7IR2A systemd[1]:
+2026-02-12T19:35:34.289672+00:00 DESKTOP-KL7IR2A systemd[1]:
+2026-02-12T19:35:34.289675+00:00 DESKTOP-KL7IR2A systemd[1]:
+2026-02-13T09:41:09.193198+00:00 DESKTOP-KL7IR2A systemd[1]:
+2026-02-13T09:41:09.193200+00:00 DESKTOP-KL7IR2A systemd[1]:
+
+# Challenge 
+> awk -F: '$7=="/bin/bash" {print $1}' /etc/passwd
+root

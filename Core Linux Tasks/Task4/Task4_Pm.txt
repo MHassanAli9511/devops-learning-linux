@@ -1,0 +1,45 @@
+# To view all user processes, cpu/memory usage,PID and cmd names, we use:
+ps -aux
+
+to find information about a specific process you can pipeline the cmd into grep:
+ps -aux | grep _____
+
+# Monitoring processes on Linux
+
+cmd: top 
+Presents all the processes running on Linux, and sorts them by their CPU usage.
+
+A better option for this is htop 
+
+
+# Background Processes
+
+Two types of processes: Background and Foregorund
+
+If we run, for example ping or sleep, they will run in the foreground, meaning that they will
+print out onto the terminal and prevent you from interacting with the terminal at all. 
+
+I can move this process to the background by entering bg %1 ( 1 is it's job number)
+or if it is in the background i can move it to the foreground by using fg %1
+
+You can also start a job in the background by using :
+
+ping -c 240 google.com &
+
+
+# Kill Processes 
+
+Involves terminating a job, by sending a kill signal.
+There are various different kill signals, but the main ones are:
+
+SIGTERM : The default kill signal, not as strong
+
+SIGKILL : Forcibly terminate a process
+
+Both ctrl c and ctrl z are kill cmds, they use the signals SIGSTOP and SIGINT respectively.
+
+To use any of these signals, we enter either the signal name or number: 
+
+syntax: 
+kill -SIGNAL <PID>
+kill -NUMBER <PID>
