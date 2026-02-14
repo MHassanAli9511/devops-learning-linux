@@ -1,0 +1,28 @@
+## Bandit Level 0 → Level 1
+
+*Challenge*
+Password stored in file called readme, located in the home directory. 
+
+
+*Solution*
+ls
+cat readme
+
+
+*Password*
+ZjLjTmM6FvvyRnrb2rfNWOZOTa6ip5If
+
+
+*Explanation*
+I listed the files in the home directory and displayed the contents of the readme using the cat
+cmd, to obtain the password
+
+
+
+*What I Learned?*
+Basic file inspection with ls and cat
+
+
+
+
+![Level 0-1 Complete](Screenshots/Level-01.png)
