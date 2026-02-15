@@ -1,0 +1,36 @@
+## Bandit Level 16 → Level 17
+
+
+*Challenge*
+Submit the password of the current level to a port on localhost in the range 31000 to 32000.
+
+
+*Solution*
+nmap -vv -p31000-32000 -sV -T5 localhost
+echo "kSkvUpMQ7lBYyCM4GBPvCvT1BfWRy0Dx" | openssl s_client -quiet -connect localhos
+t:31790
+
+
+
+*Password*
+SSH.privatekey for bandit17
+
+*Explanation*
+I used nmap to check what port was reachable, by inputting the range. When learning namp, i found
+that -vv, outputs what the cmd is doing, and T5 is used to make the search quciker. This command 
+will then run some scans to figure out the services on the ports. 
+
+This is called port enumeration; we are locating a localhost which is serving ssl. In this case
+it was port 31790, and then we echo the current password to that port to receive the privatekey for
+the next level.
+
+
+
+*What I Learned?*
+What nmap is and how it can be used to detect ports that are reachable and what services are
+listening on them.
+What TCP ports are? They are a system of reliable network connections and ports that allow the 
+computer to send requests and to recieve signals and direct them to specific programs
+
+
+![Level 16-17 Complete](Screenshots/Level-16-17.png)

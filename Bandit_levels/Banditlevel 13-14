@@ -1,0 +1,33 @@
+## Bandit Level 13 → Level 14
+
+
+*Challenge*
+Using a SSH private key to enter into the next level and access its password
+
+
+
+*Solution*
+scp -P 2220 bandit13@bandit.labs.overthewire.org:/home/bandit13/sshkey.private .
+chmod u+x sshkey.private
+ssh -i./sshkey.private -p 2220 bandit14@bandit.labs.overthewire.org
+cat /etc/bandit_pass/bandit14
+
+
+*Password*
+MU4VWeTyJk8ROof1qqmcBPaLh7lDCPvS
+
+*Explanation*
+I used the scp cmd to copy the SSH key into my local directory via the 2220 port. I then made it
+executable, so that i can use it to SSH into Bandit 14. Once in, i entered the password for the
+current level and cat the password file, because as bandit14 i would have permisson to view it.
+
+
+
+*What I Learned?*
+How to use a private SSH key for authentication and why key-based login is more secure and
+commonly used in real Linux and DevOps environments than password authentication.
+
+
+
+![Level 13-14 Complete](Screenshots/Level-13-14.png)
+

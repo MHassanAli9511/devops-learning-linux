@@ -1,0 +1,27 @@
+## Bandit Level 1 → Level 2
+
+*Challenge*
+Password is stored in a file called -
+
+
+
+*Solution*
+ls
+cat ./-
+
+
+*Password*
+263JGJPfgU6LtdEvgfWU1XP5yac29mFx
+
+*Explanation*
+I listed the direcotry, saw the file name as -. I had to use a relative path [./] to obtain the
+password.
+
+
+*What I Learned?*
+How we can access files with special names, like - , so that they are not treated as options. 
+
+
+![Level 1-2 Complete](Screenshots/Level-1-2.png)
+
+

@@ -1,0 +1,42 @@
+## Bandit Level 5 → Level 6
+
+*Challenge*
+Password stored in a file with the following properties: 
+human-readable
+1033 bytes in size
+not executable
+
+
+*Solution*
+ls
+cd inhere
+ls
+find . -type f -size 1033c
+cat ~/inhere/maybehere07/.file2
+ls -l ~/inhere/maybehere07/.file2
+file /home/bandit5/inhere/maybehere07/.file2
+
+
+*Password*
+HWasnPhtq9AVKe0dmk45nxy20cvUa6EG
+
+*Explanation*
+Used the find cmd to find a file with that exact size in the inhere directory. 
+Found .file2 , and to verify the other properties, i then used ls -l to check its permissions and
+file.... to check if it is human-readable
+
+
+
+*What I Learned?*
+How to use the find cmd, and i learned the different options we can present to find to find
+specific files or directories. For example, in my subsequent learning of this cmd i learned,
+to search by:
+>Name 
+>Entry Type
+>Size
+>Time Modified
+>Permissions
+
+
+![Level 5-6 Complete](Screenshots/Level-5-6.png)
+

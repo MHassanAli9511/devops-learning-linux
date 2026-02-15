@@ -1,0 +1,27 @@
+## Bandit Level 4 → Level 5
+
+*Challenge*
+Password stored in only human-readable file in the inhere directory.
+
+
+*Solution*
+ls
+cd inhere
+ls -lah
+file ./*
+cat ./-file07
+
+*Password*
+4oQYVPkxZOOEOO5pTW81FB8j8lxXGUQw
+
+*Explanation*
+Entered into the inhere directory. saw multiple files and used the file cmd to identify which
+file was human readable, which was the ASCII text file. I then cat that file to obtain the password
+
+
+*What I Learned?*
+How to use the file cmd to determine the file type of multiple files.
+
+
+
+![Level 4 Complete](Screenshots/Level-4-5.png)

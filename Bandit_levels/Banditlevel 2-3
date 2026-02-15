@@ -1,0 +1,26 @@
+## Bandit Level 2 → Level 3
+
+*Challenge*
+Password stored in file called: " --spaces in this filename--"
+ 
+
+
+*Solution*
+ls
+ cat "./--spaces in this filename--"
+
+
+*Password*
+MNk8KNH3Usiio41PRUEoDFPqfxLPlSmx
+
+
+*Explanation*
+Listed and displayed contents of file by using "___" for spaces and ./ for the special character
+
+
+*What I Learned?*
+How to handle filenames with spaces using quotation marks
+
+
+
+![Level 2-3 Complete](Screenshots/Level-2-3.png)

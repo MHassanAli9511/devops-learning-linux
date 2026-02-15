@@ -1,0 +1,30 @@
+## Bandit Level 10 → Level 11
+
+
+*Challenge*
+Password for the next level is stored in the file data.txt, which contains base64 encoded data
+
+
+
+*Solution*
+base64 -d data.txt
+
+
+*Password*
+dtR173fZKb0RRsDFSGsg2RWnpNVj3qRr
+
+
+*Explanation*
+To encode, you input base64, but to decode you add the option -d, which in this case gave me the 
+password.
+
+
+*What I Learned?*
+Base64 encodes any data into a safe set of characters. Important distinction, this is not encryption>
+It is used so that data can travel through systems safely that only handle text. 
+
+
+
+![Level 10-11 Complete](Screenshots/Level-10-11.png)
+
+

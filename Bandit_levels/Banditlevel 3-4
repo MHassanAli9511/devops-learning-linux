@@ -1,0 +1,30 @@
+## Bandit Level 3 → Level 4
+
+*Challenge*
+Password is hidden in inhere directory
+
+
+*Solution*
+ls 
+cd inhere
+ls 
+ls -a
+cat ./...Hiding-From-You
+
+
+*Password*
+2WmrDFRmJIq3IPxneAaMGhap0pFhF3NJ
+
+*Explanation*
+Navigated into the inhere directory, listed all files including hidden ones using ls -a, and
+displayed contents of the hidden file.
+
+
+*What I Learned?*
+How to view hidden files using ls -a
+
+
+
+![Level 3-4 Complete](Screenshots/Level-3-4.png)
+
+

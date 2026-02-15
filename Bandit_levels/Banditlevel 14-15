@@ -1,0 +1,32 @@
+# Bandit Level 14 → Level 15
+
+
+*Challenge*
+The password for the next level can be retrieved by submitting the password of the current level
+to port 30000 on localhost.
+
+
+
+*Solution*
+telnet localhost 30000
+<enter password for current level>   MU4VWeTyJk8ROof1qqmcBPaLh7lDCPvS
+
+
+*Password*
+8xCjnmgoKbGLhHFAZlGE5Tmu4M2tKJQo
+
+*Explanation*
+Used telnet to establish a remote connection to the localhost via port 30000
+Then i entered the bandit14 password to obtain the level 15 one. 
+
+
+*What I Learned?*
+Learned for this level, How the internet works, what ports are and what telnet does? Essentially,
+telnet is an older and less secure version of connecting to a remote server. Nowadays, while it's
+use is limited, it is mainly used for debugging and to test a connection, not for remote access. SSH
+is the more secure and modern alternative. 
+
+
+
+![Level 14-15 Complete](Screenshots/Level-14-15.png)
+

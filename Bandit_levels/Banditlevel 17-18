@@ -1,0 +1,34 @@
+## Bandit Level 17 → Level 18
+
+
+*Challenge*
+Get into Bandit 17, using the private key from Level 16
+Password in password.new file, and it is the only line changed between the two versions of the file. 
+
+
+
+
+
+*Solution*
+ssh -i./Bandit17.key -p 2220 bandit17@bandit.labs.overthewire.org
+diff passwords.old passwords.new
+
+
+*Password*
+x2gLTTjFwMOhQ8oWNbMN362QKxfRqGlO
+
+*Explanation*
+Compared the contents of the two files to identify the line that changed.
+
+
+
+*What I Learned?*
+How to use the diff command to quickly detect differences between files and extract important 
+information, a technique commonly used for troubleshooting, configuration comparison, and change 
+tracking in Linux and DevOps environments.
+
+
+![Level 17-18 Complete](Screenshots/Level-17-18.png)
+
+
+

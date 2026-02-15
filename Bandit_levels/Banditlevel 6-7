@@ -1,0 +1,35 @@
+## Bandit Level 6 → Level 7
+
+*Challenge*
+Password is stored somewhere on the server and has the following properties: 
+owned by user bandit7
+owned by group bandit6
+33 bytes in size
+
+
+
+*Solution*
+find / -type f -size 33c | grep bandit
+cat /var/lib/dpkg/info/bandit7.password
+ls -l /var/lib/dpkg/info/bandit7.password
+
+
+*Password*
+morbNTDkSW6jIlUc0ymOdMaLnOlFVAaj
+
+*Explanation*
+I recognise my 'way' was not as efficient, because i didnt know that you can also search files by
+its ownership. So, i searched the files by size, and used grep to locate the bandit files, and
+saw one highlighted red that said bandit 7 password. I used cat to display it's content and ls -l
+to verify it has the right ownership as per the level objectives.
+
+
+
+*What I Learned?*
+How to use find cmd, to search across whole system for a file owned by a specific user and group. 
+
+
+
+![Level 6-7 Complete](Screenshots/Level-6-7.png)
+
+

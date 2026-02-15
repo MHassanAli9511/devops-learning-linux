@@ -1,0 +1,56 @@
+## Bandit Level 12 → Level 13
+
+
+*Challenge*
+The password for the next level is stored in the file data.txt, which is a hexdump of a file that
+has been repeatedly compressed.
+
+
+*Solution*
+mktemp -d
+cd /tmp/tmp.fye6N1owQ6
+cp ~/data.txt /tmp/tmp.fye6N1owQ6/
+xxd -r data.txt > hexdump.txt
+# Then you repeat the following until you get to the ASCII text 
+file hexdump.txt
+mv filename filename___  (ending is .gz, bz2 or tar based on file type)
+gzip -d _____ / bzip2 -d ______ / tar -xf _______
+
+Then:
+cat data8
+
+
+*Password*
+FO5dwFsc0cbaIiH0h8J2eUks2vdTDwAn
+
+*Explanation*
+I first, as per the instrcutions created a temporary directory to work in. Then i reverted the 
+hex dump back into the original file, and redirectd the stdout into a new file. Then i repeated the 
+following steps: i checked the file type, changed the filename to have the corresponding ending, 
+and decompressed it with either gzip/bzip or tar, until the file type was presented to be readable 
+text - ASCII text. I then displayed the content of that final file to obtain the password. 
+
+
+
+*What I Learned?*
+Using the file cmd to discover the file type of a file, learning how to use xxd, and how to
+decompress files, and extract from an archive. 
+
+This level introduced me to archives, how we can create them and how we can extract our 
+files from them. Before i attempted this level i did learn what the different options meant: -x,-c
+-f, -v and so on. 
+
+To understand this level, it was also necessary to first learn how hexadecimal represents data in
+computers. 
+Decimal uses a base-10 number system, whereas hexadecimal uses base-16, consisting of the digits 0-9
+and A-F
+In computing, one hexadecimal digit represents four bits, and two hexadecimal digits represent one
+byte (8 bits), which is how characters and file data are stored internally.
+Tools such as xxd display file bytes in hexadecimal form and can also reconstruct the original
+binary data. The file cmd identifies the file type by using signature bytes at the start of
+the file. 
+
+Understanding these concepts made it possible for me to comprehend what i was doing. 
+
+
+![Level 12-13 Complete](Screenshots/Level-12-13.png)

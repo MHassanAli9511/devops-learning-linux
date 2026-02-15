@@ -1,0 +1,43 @@
+## Bandit Level 11 → Level 12
+
+
+*Challenge*
+Password for the next level is stored in the file data.txt, where all lowercase (a-z) and uppercase
+(A-Z) letters have been rotated by 13 positions
+
+
+*Solution*
+cat data.txt | tr 'A-Za-z' 'N-ZA-Mn-za-m'
+
+
+*Password*
+7x16WNeHIi5YkIhWsfFIqoognUTyj9Q4
+
+*Explanation*
+Displayed the contents of the file, and used the tr cmd to apply the ROT13 substitution, to reveal
+the password for the next level
+
+
+
+*What I Learned?*
+The text in this level was obfuscated by the ROT13 substitution, so we had to use tr to decode it.
+
+ROT13 is a simple substitution cipher where each letter in the alphabet is shifted 13 positions.
+Because the English alphabet has 26 letters, applying ROT13 twice returns the text to its original form.
+
+This method is considered obfuscation, meaning the text is deliberately made harder to read without being permanently encrypted.
+
+To decode ROT13 in Linux, the tr command is used to map:
+
+the original alphabet → A-Za-z
+
+the shifted alphabet → N-ZA-Mn-za-m
+
+Both character sets must be the same length so each letter maps correctly.
+ROT13 is symmetrical, so the translation works in either direction.
+
+
+
+![Level 11-12 Complete](Screenshots/Level-11-12.png)
+
+

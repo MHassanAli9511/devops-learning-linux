@@ -1,0 +1,37 @@
+## Bandit Level 15 → Level 16
+
+
+*Challenge*
+The password for the next level can be retrieved by submitting the password of the current level
+to port 30001 on localhost using SSL/TLS encryption.
+
+
+*Solution*
+echo "8xCjnmgoKbGLhHFAZlGE5Tmu4M2tKJQo" | openssl s_client -quiet -connect localhost:30001
+
+
+*Password*
+kSkvUpMQ7lBYyCM4GBPvCvT1BfWRy0Dx
+
+*Explanation*
+We are pipelining the current password to the openssl cmd, which will send the current password to
+the server and we will retrieve the password for the next.
+
+
+
+*What I Learned?*
+What TLS is how TLS-encrypted services can be discovered and interacted with in Linux by combining 
+network scanning and secure communication tools.
+Using nmap, it is possible to determine whether a host is reachable, which ports are open, and what 
+services are listening on those ports.
+After identifying the port providing an SSL/TLS service, openssl s_client can be used to establish 
+a secure connection and send data to the service in order to retrieve the required response.
+
+This level also reinforced that TLS provides encryption, authentication, and integrity, protecting 
+data in transit and ensuring communication occurs with the intended server rather than an attacker.
+
+![Level 15-16 Complete](Screenshots/Level-15-16.png)
+
+
+
+
