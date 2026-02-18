@@ -1,0 +1,31 @@
+## Bandit Level 18 → Level 19
+
+
+*Challenge*
+Password for the next level is stored in a file readme in the homedirectory. Unfortunately, 
+someone has modified .bashrc to log you out when you log in with SSH.
+
+
+
+*Solution*
+ssh bandit18@bandit.labs.overthewire.org -p 2220 "cat readme"
+
+
+
+*Password*
+cGWpMaKXVwDUNgPAVJbWYuGHVn9zl3j8
+
+*Explanation*
+I logged into the remote system and executed a command directly during the SSH connection to read 
+the readme file, which ouputted the password
+
+
+*What I Learned?*
+I learned how to run a cmd non-interactively over SSH, and why this technique is useful, when
+normal shell access is restricted.
+
+
+![Level 18-19 Complete](Screenshots/Level-18-19.png)
+
+
+

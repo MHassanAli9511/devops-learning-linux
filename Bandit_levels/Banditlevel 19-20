@@ -1,0 +1,33 @@
+## Bandit Level 19 → Level 20
+
+
+*Challenge*
+To gain access to the next level, you should use the setuid binary in the homedirectory. 
+Execute it without arguments to find out how to use it. The password for this level can be found 
+in the usual place (/etc/bandit_pass), after you have used the setuid binary.
+
+*Solution*
+./bandit20-do whoami
+./bandit20-do cat /etc/bandit_pass/bandit20
+
+
+*Password*
+0qXahG8ZjOVMN9Ghs7iOWsCfZyXOUbYO
+
+*Explanation*
+I used the setuid to run whoami, as instrcuted by the terminal output, this confirmed that the cmd 
+executes with bandit20 privileges. So i used it to cat/read the file to obtain the password.
+
+
+
+*What I Learned?*
+What setuid is and how setuid programs execute cmds with another user's permissions. The
+file/program was temporarily acting as bandit20. This is an example of privilege escalation;
+we are the bandit19 user, but the program lets you act as bandit 20. This is a key mechanism in 
+system tasks like users changing their password. 
+
+
+![Level 19-20 Complete](Screenshots/Level-19-20.png)
+
+
+
