@@ -1,3 +1,5 @@
+## Scripts:
+
 1. Calculator Script
 
 This script prompts the user to input two numbers and performs basic arithmetic operations:
