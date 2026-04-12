@@ -100,3 +100,13 @@ structure scripts using output blocks {} for cleaner logging, how to use top -b 
 non-interactive snapshot of system performance, and how commands like free -h provide readable 
 system memory data. I also reinforced my understanding that tools like grep can operate across 
 multiple files efficiently when working with logs or datasets
+
+## Why Bash matters in DevOps
+
+From working through these scripts, I’ve started to see how Bash fits into DevOps in a practical way.
+
+A lot of what DevOps engineers do comes down to automation, and Bash is one of the simplest ways to start doing that. Whether it’s creating files, backing things up, checking permissions, or monitoring a system, Bash lets you tie all of that together into one script.
+
+It’s also clear how important Linux is in this space, and Bash is basically the way you interact with it at a deeper level. Instead of running commands manually, you’re turning them into repeatable workflows.
+
+Even from these small scripts, I can see how this scales into bigger things like CI/CD pipelines, system monitoring, and infrastructure automation. It’s not just about writing scripts, but about thinking in terms of automating tasks and making systems more efficient.
